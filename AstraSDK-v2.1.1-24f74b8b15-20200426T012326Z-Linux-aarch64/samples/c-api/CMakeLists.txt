@@ -1,0 +1,12 @@
+add_subdirectory(DepthReaderPoll)
+add_subdirectory(DepthReaderEvent)
+add_subdirectory(ColorReaderPoll)
+add_subdirectory(ColorReaderEvent)
+add_subdirectory(InfraredReaderEvent)
+add_subdirectory(InfraredReaderPoll)
+add_subdirectory(InfraredColorReaderEvent)
+add_subdirectory(BodyReaderPoll)
+
+if (ASTRA_HAND)
+    add_subdirectory(HandReader)
+endif()
