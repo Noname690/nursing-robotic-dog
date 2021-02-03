@@ -7,7 +7,7 @@
 
 - 本项目为南方科技大学计算机科学与技术专业创新实践项目，指导老师为于仕琪老师。
 
-- **项目目前进度及效果可见视频：**https://www.bilibili.com/video/BV1Wh41127wu?from=search&seid=331279642344468380
+- 项目目前进度及效果可见视频：https://www.bilibili.com/video/BV1Wh41127wu?from=search&seid=331279642344468380
 
 --------------------------------
 
@@ -39,23 +39,24 @@
 
 本次项目使用云深处绝影mini，其内置毫米波雷达、realsence深度摄像机以及三台主机，其中一台负责控制感知部分。所以在机器狗内置识别和处理运算时会出现过热导致的处理帧数不足。
 
-![dog](C:\Users\17392\Desktop\杂文件—工程\machine_dog\assets\dog.png)
+![dog](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/dog.png)
 
 ##### 深度摄像机
 
 奥比中光AstraPro使用结构光原理，因此精度和帧率都较高但因为原理原因无法在强光环境下使用。
 
-![camera](C:\Users\17392\Desktop\杂文件—工程\machine_dog\assets\camera.png)
+![camera](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/camera.png)
 
-![structured light](C:\Users\17392\Desktop\杂文件—工程\machine_dog\assets\structured light.png)
+![structured light](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/structured light.png)
 
 ##### 识别结果
 
 目前可识别目标简单动作以及发生意外的情况。
 
-![motion](C:\Users\17392\Desktop\杂文件—工程\machine_dog\assets\motion.png)
+![motion](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/motion.png)
 
-![accident](C:\Users\17392\Desktop\杂文件—工程\machine_dog\assets\accident.png)
+![accident](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/accident.png
+)
 
 
 
