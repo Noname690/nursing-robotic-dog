@@ -47,8 +47,6 @@
 
 ![camera](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/camera.png)
 
-![structuredlight](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/structured light.png)
-
 ##### 识别结果
 
 目前可识别目标简单动作以及发生意外的情况。
