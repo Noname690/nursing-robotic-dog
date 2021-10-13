@@ -58,6 +58,51 @@
 ![accident](https://github.com/Noname690/Application-of-human-dangerous-behavior-warning-in-mechanical-dog/blob/main/assets/accident.png
 )
 
+### 项目进度
+
+##### 10月8日-10月13日
+
+1.在使用Astra SDK的过程中，发现彩色图可以显示，但是人体骨架识别的深度图无法显示。
+
+![color](./assets/color.png)
+
+![depth](./assets/depth.png)
+
+对深度图显示进行BUG修复，修复流程如下：
+
+首先对数据流进行排查，考虑到是深度图，因此对摄像头的深度信息获取进行测试，结果发现，深度信息能够正常获取到。
+
+![depthInfo](./assets/depthInfo.png)
+
+因此对人体骨架识别的深度图中，对人体骨架信息流进行排查。结果发现，当取消人体骨架信息流的传递之后才能够正常显示深度图。
+
+![bodystream](./assets/bodyStream.png)
+
+人体骨架信息流用于视频中绘制人体骨架，因此，对绘制部分的代码进行排查，经排查，发现深度图信息绘制的缓冲区(displaybuffer_)以及人体骨架信息绘制的缓冲区(overlaybuffer_)没有数据。
+
+![draw_to](./assets/draw_to.png)
+
+发现displaybuffer_与overlaybuffer_的数据来源于processDepth和processBodies方法，而这两个方法均用于on_frame_ready方法进行每帧传输数据。
+
+![process](./assets/process.png)
+
+![frame](./assets/frame.png)
+
+而on_frame_ready的实现具体是由Astra SDK的动态链接库定义，无法进行修改。因此之后计划向Astra SDK相关负责人反应BUG的问题。而目前也因为无法通过Astra SDK来获取人体骨架信息而只能获取深度信息图。计划之后采用openpose或自行设计算法进行人体骨架识别。
+
+2.修改深度图源代码，使得系统获取视频流中鼠标所指位置的深度信息。具体实现是通过修改主函数中监听来获取鼠标所指位置的深度信息。
+
+![figure](./assets/figure.png)
+
+![figure2](./assets/figure2.png)
+
+##### 10月1日-10月7日
+
+1.购买TF卡用于NANO开发板系统安装与数据存储，购买网卡，但网卡仅适用于WINDOWS系统，NANO开发板是使用LINUX系统，因此无法使用网卡。
+
+2.安装LINUX系统于开发板上，并安装Astra SDK。安装流程参考NVIDIA Jetson Nano 2GB 系列文章![reference](http://mp.weixin.qq.com/s?__biz=MzU2NzkyMzUxMw==&mid=2247497645&idx=1&sn=71ea0f4cf31f2e1c20730272d483aa05&chksm=fc9771fbcbe0f8edd6ab5505ca78a3dd553566f6a0c2a58634ed43f11a7c6f4488834c8e8b43&mpshare=1&scene=23&srcid=1013qjNMHABoyX8yL1TFsE3W&sharer_sharetime=1634123717294&sharer_shareid=e7094114e2eb79b3a7af280a020d0075#rd)。安装效果如图所示：
+
+![install](./assets/install.png)
 
 
 
